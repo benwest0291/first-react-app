@@ -1,10 +1,37 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 
 function App() {
+  const expenses = [
+    {
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2021, 9, 25),
+    },
+    {
+      id: "e2",
+      title: "New TV",
+      amount: 799.49,
+      date: new Date(2021, 2, 12),
+    },
+    {
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 5, 24),
+    },
+    {
+      id: "e4",
+      title: "New Desk",
+      amount: 450,
+      date: new Date(2021, 3, 23),
+    },
+  ];
+
   return (
     <div>
       <h2>Money Tracker 💰</h2>
-      <ExpenseItem></ExpenseItem>
+      <Expenses items={expenses} />
     </div>
   );
 }
