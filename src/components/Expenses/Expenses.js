@@ -1,8 +1,10 @@
-import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
-import "./Expenses.css";
+import React from "react"; // importing React (Optional)
 
-function Expenses(props) {
+import ExpenseItem from "./ExpenseItem"; // importing ExpenseItem
+import Card from "../UI/Card"; // card componet that is set for css styles
+import "./Expenses.css"; // importing css styles
+
+const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpenseItem
@@ -27,6 +29,6 @@ function Expenses(props) {
       />
     </Card>
   );
-}
-
-export default Expenses;
+};
+// Arrow function that has all 4 objects info that will pass th info from props to the Expenense item.js to render in app.js
+export default Expenses; // exporting component

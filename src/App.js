@@ -1,6 +1,8 @@
-import Expenses from "./components/Expenses";
+import React from "react"; // importing React (Optional)
+import Expenses from "./components/Expenses/Expenses"; // importing Expenses.js
 
-function App() {
+// Aray of Objects
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -27,13 +29,13 @@ function App() {
       date: new Date(2021, 3, 23),
     },
   ];
-
+  // redering a div with Expenses Component with props of expenses
   return (
     <div>
       <h2>Money Tracker 💰</h2>
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
-export default App;
+export default App; // Exporting to APP to render in browser
