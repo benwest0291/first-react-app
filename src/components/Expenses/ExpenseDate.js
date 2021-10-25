@@ -1,9 +1,13 @@
-import "./ExpenseDate.css";
+import React from "react"; // importing React (optional)
 
-function ExpenseDate(props) {
+import "./ExpenseDate.css"; // importing styles
+
+const ExpenseDate = (props) => {
   const month = props.date.toLocaleString("en-US", { month: "long" });
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.date.getFullYear();
+
+  // varibles with month/day/year stored in it
 
   return (
     <div className="expense-date">
@@ -12,6 +16,6 @@ function ExpenseDate(props) {
       <div className="expense-date__day">{day}</div>
     </div>
   );
-}
-
-export default ExpenseDate;
+};
+// component with veribles stored in it to be rendered in app.js
+export default ExpenseDate; // exporting component
