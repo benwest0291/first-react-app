@@ -1,4 +1,4 @@
-import React from "react"; // importing React (Optional)
+import React, { useState } from "react"; // importing React (Optional)
 
 import ExpenseItem from "./ExpensesItem"; // importing ExpenseItem
 import ExpensesFilter from "./ExpensesFilter";
@@ -6,10 +6,19 @@ import Card from "../UI/Card"; // card componet that is set for css styles
 import "./Expenses.css"; // importing css styles
 
 const Expenses = (props) => {
+  const [filteredYear, setFilteredYear] = useState("2020");
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
   return (
     <div>
       <Card className="expenses">
-        <ExpensesFilter />
+        <ExpensesFilter
+          selected={filteredYear}
+          onChangeFilter={filterChangeHandler}
+        />
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
@@ -34,6 +43,5 @@ const Expenses = (props) => {
     </div>
   );
 };
-// Arrow function that has all components that has extracted the infor from the
-// array/ about and will push the expenseItem Component
-export default Expenses; // exporting component
+
+export default Expenses;
