@@ -1,4 +1,5 @@
 import React from "react"; // importing React (Optional)
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses"; // importing Expenses.js
 
 // Aray of Objects
@@ -29,10 +30,15 @@ const App = () => {
       date: new Date(2021, 3, 23),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("im in app.js");
+    console.log(expense);
+  };
   // redering a div with Expenses Component with props of expenses
   return (
     <div>
-      <h2>Money Tracker 💰</h2>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
