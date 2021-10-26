@@ -2,7 +2,7 @@ import React, { useState } from "react"; // importing React (optional)
 
 import ExpenseDate from "./ExpenseDate"; // importing expenseDate
 import Card from "../UI/Card"; // card componet that is set for css styles
-import "./ExpenseItem.css"; // importing css styles
+import "./ExpensesItem.css"; // importing css styles
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
